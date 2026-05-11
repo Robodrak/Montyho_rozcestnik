@@ -48,6 +48,7 @@
             padding: 40px;
             border: 8px dashed #ffb142;
             box-shadow: 0px 15px 30px rgba(0,0,0,0.15);
+            box-sizing: border-box; /* Zabrání přetékání na mobilu */
         }
 
         /* --- STYL PRO NAROZENINOVOU POZVÁNKU --- */
@@ -114,6 +115,8 @@
             border-radius: 15px;
             display: inline-block;
             border: 2px dashed #f1c40f;
+            box-sizing: border-box;
+            width: 100%; /* Lepší zobrazení na mobilu */
         }
 
         /* Rozcestník - manuální linky */
@@ -165,6 +168,75 @@
             font-size: 2.5em;
             margin-bottom: 10px;
         }
+
+        /* --- MOBILNÍ OPTIMALIZACE (pro obrazovky menší než 600px) --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                background-size: 150px; /* Zmenší vzor štěňátek pro menší obrazovky */
+            }
+            .container {
+                padding: 20px;
+                border-width: 4px;
+                border-radius: 25px;
+            }
+            h1 {
+                font-size: 2.2em; /* Zmenšení obřího nadpisu */
+            }
+            .subtitle {
+                font-size: 1.1em;
+                padding: 8px 12px;
+            }
+            .birthday-invite {
+                padding: 15px;
+                border-width: 4px;
+                border-radius: 20px;
+            }
+            .birthday-invite h2 {
+                font-size: 1.6em;
+            }
+            .birthday-invite p {
+                font-size: 1.1em;
+            }
+            .auto-section {
+                padding: 15px;
+                border-width: 3px;
+                border-radius: 20px;
+            }
+            .btn-check {
+                font-size: 1.1em;
+                padding: 15px 20px;
+                width: 100%; /* Roztažení tlačítka na šířku mobilu */
+                box-sizing: border-box;
+            }
+            #result-hafaste {
+                font-size: 1.1em;
+                padding: 10px;
+            }
+            .manual-section {
+                padding: 15px;
+                border-width: 3px;
+                border-radius: 20px;
+            }
+            .manual-section h2 {
+                font-size: 1.5em;
+            }
+            .manual-section p {
+                font-size: 1.1em !important;
+            }
+            .links-grid {
+                grid-template-columns: 1fr; /* Tlačítka budou hezky pod sebou v jednom sloupci */
+                gap: 15px;
+            }
+            .link-card {
+                padding: 15px;
+                font-size: 1.1em;
+                border-radius: 20px;
+            }
+            .link-icon {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -177,7 +249,7 @@
             <span class="confetti">🎂 🎉 🎈 🎁</span>
             <h2>Všechno nejlepší k narozeninám, chOmi!</h2>
             <p>
-                přeje Montyho fanclub. <br>
+                přeje Montyho fanclub. <br><br>
                 Tímto tě zveme na <strong>společnej event se štěňátky</strong> (jóga/káves). <br>
                 Tady máš hlídacího psa / rozcestník na zlaťáčky, ať nám nic neuteče!
             </p>
